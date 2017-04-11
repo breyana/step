@@ -14,7 +14,7 @@ export default class ProjectContainer extends GlobalStateComponent {
   }
 
   componentDidMount() {
-    axios.get( `http://localhost:1337/project/${this.projectId}/could-do` )
+    axios.get( __API__ + `project/${this.projectId}/could-do` )
       .then( response => globalState.set({ couldDos: { [this.projectId]: response.data } }) )
       .catch( componentErrorHandler( 'ProjectContainer' ) )
   }

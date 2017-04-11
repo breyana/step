@@ -1,4 +1,25 @@
 const WebpackErrorNotificationPlugin = require('webpack-error-notification')
+const webpack = require('webpack')
+
+let apiHost
+
+const setupAPI = () => {
+  switch ( process.env.NODE_ENV ) {
+    case 'production':
+      apiHost = "'http://localhost:1337/'"
+      break
+    case 'test':
+      apiHost = "'http://localhost:1337/'"
+      break
+    case 'development':
+      apiHost = "'http://localhost:1337/'"
+      break
+    default:
+      apiHost = "'http://localhost:1337/'"
+  }
+}
+
+setupAPI()
 
 module.exports = {
   entry: './source/root.js',
@@ -18,5 +39,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [new WebpackErrorNotificationPlugin()]
+  plugins: [
+    new WebpackErrorNotificationPlugin(),
+    new webpack.DefinePlugin({
+      __API__: apiHost
+    })
+  ]
 }
