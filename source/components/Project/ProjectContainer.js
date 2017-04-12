@@ -14,7 +14,7 @@ export default class ProjectContainer extends GlobalStateComponent {
   }
 
   componentDidMount() {
-    axios.get( __API__ + `project/${this.projectId}/could-do` )
+    axios.get( `${__HOST__}/project/${this.projectId}/could-do` ) //eslint-disable-line
       .then( response => globalState.set({ couldDos: { [this.projectId]: response.data } }) )
       .catch( componentErrorHandler( 'ProjectContainer' ) )
   }
