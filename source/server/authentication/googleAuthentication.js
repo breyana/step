@@ -3,6 +3,10 @@ import { getUserByOAuthID } from '../../dataServices/database/queries'
 import { newUser } from '../../dataServices/database/commands'
 import '../../../configuration/environment'
 
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.CLIENT_SECRET) {
+  throw new Error('make sure you have GOOGLE_CLIENT_ID and CLIENT_SECRET in your .env file')
+}
+
 const options = {
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
