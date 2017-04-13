@@ -17,7 +17,16 @@ describe( 'authentication', () => {
           expect( response.status ).to.equal( 302 )
         })
     )
+  })
 
+  context( '/session', () => {
+    it.only( 'session', () =>
+      chai.request( server )
+        .get( '/session' )
+        .then( response => {
+          expect(response.body.userId).to.be.eql(9000)
+        })
+    )
   })
 
 })
