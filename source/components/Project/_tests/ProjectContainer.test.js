@@ -54,7 +54,7 @@ describe( ' <ProjectContainer />', () => {
   xcontext( 'handles error returned from HTTP request on componentDidMount', () => {
     let errorStub
 
-    before( async () => {
+    before( () => {
       moxios.install()
       errorStub = sinon.stub( console, 'error' ).callsFake( () => null )
       mount( <ProjectContainer /> )

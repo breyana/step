@@ -1,7 +1,7 @@
 import React from 'react'
 import sinon from 'sinon'
 import moxios from 'moxios'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import { expect } from '../../../../configuration/testSetup'
 import App from '../App'
 
@@ -61,7 +61,7 @@ describe( '<App />', () => {
           status: 400,
           response: 'fakeError'
         }).then( () => {
-          expect( errorStub.called ).to.equal( true )
+          expect( errorStub.calledThrice ).to.equal( true )
           done()
         }).catch( done )
       })
