@@ -39,6 +39,11 @@ const handleGetSession = ( request, response ) => {
   response.json( { userId } )
 }
 
+const handleGetSession = ( request, response ) => {
+  const userId = request.userId
+  response.json( { userId } )
+}
+
 export {
   checkForAuthorization,
   getGoogleOAuthPermissionCode,
