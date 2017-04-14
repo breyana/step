@@ -28,23 +28,5 @@ describe( 'authentication', () => {
         })
     )
 
-    it( 'session', () => {
-      before() {
-        process.env.NODE_ENV = 'production'
-      }
-
-      after() {
-        process.env.NODE_ENV = 'test'
-      }
-
-      chai.request( server )
-        .get( '/session' )
-        .then( Promise.reject()
-        .catch()
-          response => {
-          expect(response.body.userId).to.be.eql(9000)
-        })
-    })
-
   })
 })
