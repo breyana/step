@@ -4,13 +4,13 @@ const webpack = require('webpack')
 const determineHost = () => {
   switch ( process.env.NODE_ENV ) {
     case 'production':
-      return "'http://localhost:1337'"
+      return 'http://localhost:1337'
     case 'test':
-      return "'http://localhost:1337'"
+      return 'http://localhost:1337'
     case 'development':
-      return "'http://localhost:1337'"
+      return 'http://localhost:1337'
     default:
-      return "'http://localhost:1337'"
+      return 'http://localhost:1337'
   }
 }
 
