@@ -5,6 +5,4 @@ const handleSendApp = ( request, response ) => {
   response.sendFile( ( `${publicPath}/index.html` ) )
 }
 
-export {
-  handleSendApp
-}
+export default handleSendApp

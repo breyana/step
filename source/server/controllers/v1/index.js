@@ -14,9 +14,7 @@ export {
 }
 from './projectController'
 
-export {
-  handleSendApp
-} from './appController'
+export { default as handleSendApp } from './appController'
 
 export {
   checkForAuthorization,
